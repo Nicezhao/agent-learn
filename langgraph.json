@@ -1,0 +1,11 @@
+{
+  "python_version": "3.13",
+  "source": {
+    "kind": "uv",
+    "root": "."
+  },
+  "graphs": {
+    "customizeAgent": "agent_demo.agents.customize_agent:customizeAgent"
+  },
+  "env": ".env"
+}
