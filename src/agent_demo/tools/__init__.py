@@ -2,13 +2,15 @@ from typing import Any
 
 from langchain_core.tools import BaseTool
 
+from agent_demo.tools.ask_question import ask_user_question
 from agent_demo.tools.gettime import get_current_time
-from agent_demo.tools.websearch import web_search, fetch_url
+from agent_demo.tools.websearch import fetch_url, web_search
 
 _AVAILABLE_TOOLS: dict[str, BaseTool] = {
     "fetch_url": fetch_url,
     "web_search": web_search,
     "get_current_time": get_current_time,
+    "ask_question": ask_user_question,
 }
 
 

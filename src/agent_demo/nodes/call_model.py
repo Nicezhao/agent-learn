@@ -49,7 +49,7 @@ def _get_model_config(context: ContextSchema) -> RunnableConfig:
 
 async def call_model(state: AgentState) -> dict:
     model = create_model()
-    messages = state["message"]
+    messages = state["messages"]
     context = _get_context()
 
     system_prompts = _get_system_prompts(state)
@@ -61,4 +61,4 @@ async def call_model(state: AgentState) -> dict:
         [*system_prompts, *messages],
         config=_get_model_config(context),
     )
-    return {"message": [response]}
+    return {"messages": [response]}

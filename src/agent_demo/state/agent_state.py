@@ -17,6 +17,6 @@ class ContextSchema(BaseModel):
 
 
 class AgentState(TypedDict):
-    message: Annotated[list[BaseMessage], add_messages]
+    messages: Annotated[list[BaseMessage], add_messages]
     # 线程首次运行时生成，后续运行始终复用同一份快照
     system_prompt: str

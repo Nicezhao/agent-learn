@@ -19,13 +19,13 @@ def _get_tool_node(context: ContextSchema) -> ToolNode:
     if node is None:
         # State 里的消息字段是 message（单数），需显式告知 ToolNode，
         # 否则结果会写进不存在的 messages channel 而被静默丢弃
-        node = ToolNode(active_tools, messages_key="message")
+        node = ToolNode(active_tools)
         _tool_nodes[key] = node
     return node
 
 
 def should_continue(state: AgentState) -> str:
-    lastMsg = state["message"][-1]
+    lastMsg = state["messages"][-1]
     if not isinstance(lastMsg, AIMessage) or not lastMsg.tool_calls:
         return END
 

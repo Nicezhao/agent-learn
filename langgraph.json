@@ -5,7 +5,8 @@
     "root": "."
   },
   "graphs": {
-    "customizeAgent": "agent_demo.agents.customize_agent:customizeAgent"
+    "customizeAgent": "agent_demo.agents.customize_agent:customizeAgent",
+    "router": "agent_demo.agents.router_demo.router:agent"
   },
   "env": ".env"
 }
